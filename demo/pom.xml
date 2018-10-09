@@ -21,6 +21,7 @@
         <module>providerA</module>
         <module>consumerA</module>
         <module>zuul</module>
+        <module>configServer</module>
     </modules>
 
     <properties>

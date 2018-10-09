@@ -1,5 +1,6 @@
 package com.llzguazi.providerA.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -14,6 +15,9 @@ import java.util.Map;
 @RestController
 public class HelloController {
 
+	@Value("${foo}")
+	private String foo;
+
 	@Resource
 	private DiscoveryClient discoveryClient; // of org.springframework
 
@@ -26,6 +30,11 @@ public class HelloController {
 	@RequestMapping(value = "/selfInfo", method = RequestMethod.GET)
 	public String selfInfo() {
 		return "providerA服务";
+	}
+
+	@RequestMapping(value = "/getFoo", method = RequestMethod.GET)
+	public String getFoo() {
+		return foo;
 	}
 
 	@GetMapping("/info")
