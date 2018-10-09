@@ -1,0 +1,15 @@
+server:
+  port: 11000
+spring:
+  application:
+    name: spring-cloud-registry
+
+
+# eureka.client.fetch-registry: 不去检索其他的服务
+# eureka.client.register-with-eureka: 是否把自身注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11000/eureka/
+    register-with-eureka: false
+    fetch-registry: false

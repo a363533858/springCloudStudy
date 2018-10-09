@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11000/eureka/
+server:
+  port: 10030
+spring:
+  application:
+    name: spring-cloud-zuul
+zuul:
+  routes:
+    api-a:
+      path: /consumer/**
+      serviceId: spring-cloud-consumerA
+    api-b:
+      path: /provider/**
+      serviceId: spring-cloud-providerA

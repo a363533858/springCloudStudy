@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-cloud-registry
+server:
+  port: 11003
+
+# eureka.client.fetch-registry: 不去检索其他的服务
+# eureka.client.register-with-eureka: 是否把自身注册到注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server1:11001/eureka/,http://server2:11002/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+      hostname: server3
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
+      prefer-ip-address: true
