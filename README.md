@@ -2,23 +2,23 @@
 springCloud学习库
 
 端口占用
-configServer:	10040
-		zuul:	10030
-   consumerA:	10020
-   providerA:	10010
-    registry:	11000
+	configServer:	10040
+	zuul:	10030
+	consumerA:	10020
+	providerA:	10010
+	registry:	11000
 	
 依赖服务
 
-configServer:	web,config-server
+	configServer:	web,config-server
 
-		zuul:	eureka-client,netflix-zuul,web
+	zuul:	eureka-client,netflix-zuul,web
 		
-   consumerA:	eureka-client,web,openfeign
+	consumerA:	eureka-client,web,openfeign
    
-   providerA:	eureka-client,config-client,web
+	providerA:	eureka-client,config-client,web
    
-    registry:	eureka-server
+	registry:	eureka-server
 	
 	
 配置服务
