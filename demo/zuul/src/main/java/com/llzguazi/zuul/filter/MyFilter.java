@@ -3,7 +3,6 @@ package com.llzguazi.zuul.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import com.sun.xml.internal.ws.client.ResponseContext;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
