@@ -1,0 +1,7 @@
+encrypt:
+  key: llzguazi
+  key-store:
+      location: config_server.keystore
+      alias: config_server
+      password: llzguazi
+      secret: llzguazi

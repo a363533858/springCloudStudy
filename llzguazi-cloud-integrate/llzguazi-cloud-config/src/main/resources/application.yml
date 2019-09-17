@@ -1,0 +1,23 @@
+server:
+  port: 5004
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/a363533858/config-repo.git #file:///D:/git-project/llzguazi/config-repo
+          username: a363533858
+          password: '{cipher}AQAa/DDOjuP+fXH0+LyfPLRiltTOd9S6ApqdiFIuL9vOFYHkba4p1GEmQx4bQ0opncCxd3xlwyHLzrfDjWWxyqqe+oLvUrwUo2haBISdxS8GRWDikuSU9MA5/GdThwefXWTj34UmmvxZfvCVzNi0YXK/YlzpXwYpAjfM3+nfcvjK9rDuEZ2o7PYtFf9PP2zhMib8kAQkpVXHH+IvOu+MPAm2L78JaRydIkhwNd+O43PCIoh0aVDLVRs15IFcmm96JM3JgyDlARlhs16JtoPSl3q9fqZTehnuNe+DKRgG9OCw1S9VaQQvws90tpU2bEqXlfV85CWKfvcVjOMlCIPMZKkH8GouKIPKR2eztKMqwdPW0uWwwkgJmohODqc5tMw0/Io='
+          searchPaths: '{application}'
+        overrides: #配置全局属性
+          type: 全局属性
+  security:
+    user:
+      name: configUser #配置密码访问
+      password: 123456
+management:
+  endpoints:
+    web:
+      base-path: /actuator #健康监测，监听git是否可以访问

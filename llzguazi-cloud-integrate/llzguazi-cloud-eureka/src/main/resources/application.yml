@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: eureka
+eureka:
+  instance:
+    hostname: localhost
+---
+server:
+  port: 5001
+spring:
+  profiles: port01
+eureka:
+  client:
+    #register-with-eureka: false                       # eureka.client.fetch-registry: 不去检索其他的服务
+    #fetch-registry: false                             # eureka.client.register-with-eureka: 是否把自身注册到注册中心
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:5001,http://${eureka.instance.hostname}:5002/eureka/,http://${eureka.instance.hostname}:5003/eureka/
+
+---
+spring:
+  profiles: port02
+server:
+  port: 5002
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:5001,http://${eureka.instance.hostname}:5002/eureka/,http://${eureka.instance.hostname}:5003/eureka/
+
+---
+spring:
+  profiles: port03
+server:
+  port: 5003
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:5001,http://${eureka.instance.hostname}:5002/eureka/,http://${eureka.instance.hostname}:5003/eureka/
